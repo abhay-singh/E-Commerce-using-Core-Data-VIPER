@@ -20,7 +20,7 @@ class UpdateLocalDataViewController: UIViewController {
 
 extension UpdateLocalDataViewController:PresenterToViewProtocol{
     func showData<T>(dataArray: Array<T>) {
-        self.productsArrayList = dataArray as! Array<String>
+     
     }
 
     func showError() {

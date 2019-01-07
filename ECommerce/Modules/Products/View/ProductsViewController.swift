@@ -12,7 +12,7 @@ class ProductsViewController: UIViewController {
     private let cellIdForCategory = "Categroy Cell"
 
     var presentor:ViewToPresenterProtocol?
-    var productsArrayList:Array<Categories> = Array()
+    var categoriesArrayList:Array<Categories> = Array()
 
     @IBOutlet var tableView: UITableView!
 
@@ -26,7 +26,7 @@ class ProductsViewController: UIViewController {
         if identifier == "showProductListSegue"{
             let categoryTableViewCell = sender as! CategoryCell
             let indexPath = self.tableView.indexPath(for: categoryTableViewCell)
-            let categoryObjc:Categories = productsArrayList[(indexPath?.row)!]
+            let categoryObjc:Categories = categoriesArrayList[(indexPath?.row)!]
             if categoryObjc.relatedProduct!.count > 0 {
                 return true
             }
@@ -39,7 +39,7 @@ class ProductsViewController: UIViewController {
             let productlistVC = segue.destination as! ProductListViewController
             let categoryTableViewCell = sender as! CategoryCell
             let indexPath = self.tableView.indexPath(for: categoryTableViewCell)
-            let categoryObjc:Categories = productsArrayList[(indexPath?.row)!]
+            let categoryObjc:Categories = categoriesArrayList[(indexPath?.row)!]
 
                 let products = Array(categoryObjc.relatedProduct!)
                 productlistVC.productsArrayList = Array(products) as! Array<Products>
@@ -51,7 +51,7 @@ class ProductsViewController: UIViewController {
 }
 extension ProductsViewController:PresenterToViewProtocol{
     func showData<T>(dataArray: Array<T>) {
-        self.productsArrayList = dataArray as! Array<Categories>
+        self.categoriesArrayList = dataArray as! Array<Categories>
          // here i am going to reload table view
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -68,12 +68,12 @@ extension ProductsViewController:PresenterToViewProtocol{
 
 extension ProductsViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.productsArrayList.count
+        return self.categoriesArrayList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdForCategory) as! CategoryCell
-        cell.set(forCategoryInfo: self.productsArrayList[indexPath.row])
+        cell.set(forCategoryInfo: self.categoriesArrayList[indexPath.row])
         return cell
     }
 

@@ -38,7 +38,7 @@
 		4E44F8DE21E39163000D402C /* Ranking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44F8CB21E39163000D402C /* Ranking+CoreDataProperties.swift */; };
 		4E44F8DF21E39163000D402C /* Ranking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44F8CB21E39163000D402C /* Ranking+CoreDataProperties.swift */; };
 		4E519FB821E0AFBD0038BA63 /* ConstantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E519FB721E0AFBD0038BA63 /* ConstantsAPI.swift */; };
-		4E519FBE21E0C29B0038BA63 /* VIPERProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E519FBD21E0C29B0038BA63 /* VIPERProtocols.swift */; };
+		4E519FBE21E0C29B0038BA63 /* CategoryProductsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E519FBD21E0C29B0038BA63 /* CategoryProductsProtocols.swift */; };
 		4E519FC021E0C3AD0038BA63 /* ProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E519FBF21E0C3AD0038BA63 /* ProductRouter.swift */; };
 		4E519FC221E0C5040038BA63 /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E519FC121E0C5040038BA63 /* ProductsPresenter.swift */; };
 		4E519FC621E0C68C0038BA63 /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E519FC521E0C68C0038BA63 /* ProductsInteractor.swift */; };
@@ -100,7 +100,7 @@
 		4E44F8CA21E39163000D402C /* Ranking+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranking+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4E44F8CB21E39163000D402C /* Ranking+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranking+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4E519FB721E0AFBD0038BA63 /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
-		4E519FBD21E0C29B0038BA63 /* VIPERProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERProtocols.swift; sourceTree = "<group>"; };
+		4E519FBD21E0C29B0038BA63 /* CategoryProductsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductsProtocols.swift; sourceTree = "<group>"; };
 		4E519FBF21E0C3AD0038BA63 /* ProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRouter.swift; sourceTree = "<group>"; };
 		4E519FC121E0C5040038BA63 /* ProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenter.swift; sourceTree = "<group>"; };
 		4E519FC521E0C68C0038BA63 /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		4E27D46121DF590200C494D9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				4E519FBD21E0C29B0038BA63 /* VIPERProtocols.swift */,
+				4E519FBD21E0C29B0038BA63 /* CategoryProductsProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -481,7 +481,7 @@
 				4E519FC221E0C5040038BA63 /* ProductsPresenter.swift in Sources */,
 				4E44F8CC21E39163000D402C /* Products+CoreDataClass.swift in Sources */,
 				4E44F8D421E39163000D402C /* Variants+CoreDataClass.swift in Sources */,
-				4E519FBE21E0C29B0038BA63 /* VIPERProtocols.swift in Sources */,
+				4E519FBE21E0C29B0038BA63 /* CategoryProductsProtocols.swift in Sources */,
 				4E27D38221DE66E800C494D9 /* AppDelegate.swift in Sources */,
 				4E7A3CBF21E3BD3C007E9EDE /* ECommerce.xcdatamodeld in Sources */,
 			);
