@@ -1,4 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Categories" representedClassName="Categories" syncable="YES">
+        <attribute name="child_categories" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relatedProduct" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Products" inverseName="relatedToCategory" inverseEntity="Products" syncable="YES"/>
+    </entity>
+    <entity name="Products" representedClassName="Products" syncable="YES">
+        <attribute name="date_added" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="productRanking" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ranking" inverseName="rankingWiseProducts" inverseEntity="Ranking" syncable="YES"/>
+        <relationship name="productsTaxs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tax" inverseName="productTaxAndValue" inverseEntity="Tax" syncable="YES"/>
+        <relationship name="relatedToCategory" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Categories" inverseName="relatedProduct" inverseEntity="Categories" syncable="YES"/>
+        <relationship name="variantsOfProduct" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Variants" inverseName="productRelatedVariants" inverseEntity="Variants" syncable="YES"/>
+    </entity>
+    <entity name="Ranking" representedClassName="Ranking" syncable="YES">
+        <attribute name="productId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ranking" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="rankingWiseProducts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Products" inverseName="productRanking" inverseEntity="Products" syncable="YES"/>
+    </entity>
+    <entity name="Tax" representedClassName="Tax" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taxValue" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="productTaxAndValue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Products" inverseName="productsTaxs" inverseEntity="Products" syncable="YES"/>
+    </entity>
+    <entity name="Variants" representedClassName="Variants" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="productRelatedVariants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Products" inverseName="variantsOfProduct" inverseEntity="Products" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Categories" positionX="-52.57421875" positionY="-58.64453125" width="128" height="103"/>
+        <element name="Products" positionX="-278.13671875" positionY="21.109375" width="128" height="150"/>
+        <element name="Ranking" positionX="-49.5390625" positionY="272.35546875" width="128" height="103"/>
+        <element name="Tax" positionX="95.08984375" positionY="180.7578125" width="128" height="90"/>
+        <element name="Variants" positionX="77.5078125" positionY="51.12890625" width="128" height="118"/>
+    </elements>
 </model>
